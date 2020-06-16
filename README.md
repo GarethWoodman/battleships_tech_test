@@ -8,8 +8,8 @@
 ## Models
 ### Boat
 #### Methods
-set_specifications - Defines specifications of boat (i.e, horizontal/vertical, length)
-check_status - Checks status of boat (i.e how many hits)
+* set_specifications - Defines specifications of boat (i.e, horizontal/vertical, length)
+* check_status - Checks status of boat (i.e how many hits)
 #### Attributes
 * @coordinates
 * @is_sunk
