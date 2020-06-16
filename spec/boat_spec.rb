@@ -25,15 +25,48 @@ describe Boat do
         subject
       end
 
-      it "entered correctly " do
-        puts "Enter coordinates A1, A2"
+      it "entered correctly" do
+        puts 'Enter coordinates A1, A2'
         boat.set_coordinates
         expect(boat.coordinates.keys).to eq ['A1', 'A2']
       end
 
-      it "raises error if incorrect " do
-        puts "Enter coordinates A1, A3"
+      it 'raises error if incorrect' do
+        puts 'Enter coordinates A1, A3'
         expect { boat.set_coordinates }.to raise_error('invalid coordinate')
+      end
+    end
+
+    context 'checks 3rd coordinate' do
+      let(:boat) do
+        subject.length = 3
+        subject
+      end
+
+      context 'horizontal layout' do
+        it 'entered correctly' do
+          puts 'Enter coordinates A1, A2, A3'
+          boat.set_coordinates
+          expect(boat.coordinates.keys).to eq ['A1', 'A2', 'A3']
+        end
+
+        it 'raises error if incorrect' do
+          puts 'Enter coordinates A1, A2, B2'
+          expect { boat.set_coordinates }.to raise_error('invalid coordinate')
+        end
+      end
+
+      context 'vertical layout' do
+        it 'entered correctly' do
+          puts 'Enter coordinates A1, B1, C1'
+          boat.set_coordinates
+          expect(boat.coordinates.keys).to eq ['A1', 'B1', 'C1']
+        end
+
+        it 'raises error if incorrect' do
+          puts 'Enter coordinates A1, B1, B2'
+          expect { boat.set_coordinates }.to raise_error('invalid coordinate')
+        end
       end
     end
   end
