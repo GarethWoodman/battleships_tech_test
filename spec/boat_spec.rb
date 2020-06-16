@@ -20,10 +20,20 @@ describe Boat do
     end
 
     context 'checks 2nd coordinate' do
+      let(:boat) do
+        subject.length = 2
+        subject
+      end
+
+      it "entered correctly " do
+        puts "Enter coordinates A1, A2"
+        boat.set_coordinates
+        expect(boat.coordinates.keys).to eq ['A1', 'A2']
+      end
+
       it "raises error if incorrect " do
-        subject.length = length
         puts "Enter coordinates A1, A3"
-        expect { subject.set_coordinates }.to raise_error('invalid coordinate')
+        expect { boat.set_coordinates }.to raise_error('invalid coordinate')
       end
     end
   end
