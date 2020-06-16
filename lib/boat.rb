@@ -1,7 +1,7 @@
 require 'coordinates'
 
 class Boat
-  attr_reader :coordinates
+  attr_reader :coordinates, :length
 
   def initialize
     @coordinates = Hash.new
@@ -11,5 +11,9 @@ class Boat
     @coordinates[gets.chomp] = 1
     @coordinates[gets.chomp] = 1
     @coordinates[gets.chomp] = 1
+  end
+
+  def set_length
+    @length = gets.chomp.to_i
   end
 end
