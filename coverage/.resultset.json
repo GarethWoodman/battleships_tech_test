@@ -10,7 +10,6 @@
           1,
           1,
           1,
-          1,
           null,
           null
         ]
@@ -18,7 +17,25 @@
       "/Users/garethwoodman/Desktop/Makers Academy/Projects/battleships_tech_test/lib/board.rb": {
         "lines": [
           1,
+          null,
           1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/garethwoodman/Desktop/Makers Academy/Projects/battleships_tech_test/lib/coordinates.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           1,
@@ -30,6 +47,8 @@
           110,
           null,
           null,
+          null,
+          1,
           null
         ]
       },
@@ -38,11 +57,12 @@
           1,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -51,10 +71,23 @@
       "/Users/garethwoodman/Desktop/Makers Academy/Projects/battleships_tech_test/lib/boat.rb": {
         "lines": [
           1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1592330442
+    "timestamp": 1592336737
   }
 }
