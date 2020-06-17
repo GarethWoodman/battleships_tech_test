@@ -1,4 +1,5 @@
-require 'coordinates'
+require_relative 'coordinates'
+require_relative 'board'
 
 class BoatPossibleMoves
   def self.check(coordinate, coordinates)
@@ -19,7 +20,7 @@ class BoatPossibleMoves
 
   def self.possible_moves
     return Coordinates.create if @coordinates.values.length == 0
-
+    
     setup
 
     if @coordinates.values.length == 1
@@ -31,6 +32,8 @@ class BoatPossibleMoves
       horizontal ? horizontal_moves : vertical_moves
     end
 
+    p @moves
+
     @moves
   end
 
@@ -41,7 +44,8 @@ class BoatPossibleMoves
   def self.horizontal_moves
     if @numbers[@last_number_i + 1]
       @moves << @letters[@last_letter_i] + @numbers[@last_number_i + 1]
-    elsif (@last_number_i - 1) > 0
+    end
+    if (@last_number_i - 1) >= 0
       @moves << @letters[@last_letter_i] + @numbers[@last_number_i - 1]
     end
   end
@@ -49,7 +53,8 @@ class BoatPossibleMoves
   def self.vertical_moves
     if @letters[@last_letter_i + 1]
       @moves << @letters[@last_letter_i + 1] + @numbers[@last_number_i]
-    elsif (@last_letter_i - 1) > 0
+    end
+    if (@last_letter_i - 1) >= 0
       @moves << @letters[@last_letter_i - 1] + @numbers[@last_number_i]
     end
   end

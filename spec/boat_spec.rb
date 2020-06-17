@@ -19,6 +19,11 @@ describe Boat do
       expect(subject.length).to eq 3
     end
 
+    it 'throws error if length is not between 2 and 5' do
+      puts "Enter 6 to pass test"
+      expect { subject.set_length }.to raise_error 'invalid length'
+    end
+
     context 'checks 2nd coordinate' do
       let(:boat) do
         subject.length = 2

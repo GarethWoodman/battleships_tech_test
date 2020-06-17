@@ -1,5 +1,5 @@
-require 'coordinates'
-require 'boat_possible_moves'
+require_relative 'coordinates'
+require_relative 'boat_possible_moves'
 
 class Boat
   attr_accessor :coordinates, :length
@@ -11,6 +11,7 @@ class Boat
   def set_coordinates
     @length.times do
       while true do
+        puts 'Enter coordinate from A0 to I9'
         coordinate = gets.chomp
         break if check(coordinate)
         raise 'invalid coordinate'
@@ -20,7 +21,13 @@ class Boat
   end
 
   def set_length
-    @length = gets.chomp.to_i
+    puts 'Enter length of boat between 2 and 5'
+    input = gets.chomp.to_i
+    if input > 1 && input < 6
+      @length = input
+    else
+      raise 'invalid length'
+    end
   end
 
   private
