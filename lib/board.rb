@@ -17,7 +17,7 @@ class Board
     end
   end
 
-  def print_board(coordinates = @coordinates)
+  def print_board(coordinates = @coordinates)2
     puts coordinates.keys.inspect
     board = '  ' + Coordinates.letters.join('  ') + "\n"
     i = -1
@@ -40,7 +40,19 @@ class Board
     print_board(boats_coordinates)
   end
 
+  def enter_coordinate(input)
+    @boats.each do |boat|
+      boat.coordinates[input] ? hit_boat(input, boat) : (p 'You missed!')
+    end
+  end
+
   private
+
+  def hit_boat(input, boat)
+    @coordinates[input] = ' x '
+    boat.coordinates[input] = 0
+    p 'Ah, you hit me!'
+  end
 
   def boats_coordinates
     keys = []
