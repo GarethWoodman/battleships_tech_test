@@ -42,7 +42,12 @@ class Board
 
   def enter_coordinate(input)
     @boats.each do |boat|
-      boat.coordinates[input] ? hit_boat(input, boat) : (p 'You missed!')
+      if boat.coordinates[input]
+        hit_boat(input, boat)
+      else
+        @coordinates[input] = ' * '
+        p 'You missed!'
+      end
     end
   end
 

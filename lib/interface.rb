@@ -14,7 +14,8 @@ class Interface
   end
 
   def setup_boats
-    puts 'Please set 5 boats'
+    p 'Setting up game...'
+    p 'Please set 5 boats'
     1.times do |i|
       puts "Set boat: #{i+1}"
       boat = Boat.new
