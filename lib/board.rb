@@ -17,8 +17,7 @@ class Board
     end
   end
 
-  def print_board(coordinates = @coordinates)2
-    puts coordinates.keys.inspect
+  def print_board(coordinates = @coordinates)
     board = '  ' + Coordinates.letters.join('  ') + "\n"
     i = -1
     10.times do |y|
@@ -33,7 +32,6 @@ class Board
     boats_coordinates = Coordinates.create
     @boats.each do |boat|
       boat.coordinates.keys.each do |key|
-        p key
         boats_coordinates[key] = ' o '
       end
     end
@@ -41,14 +39,15 @@ class Board
   end
 
   def enter_coordinate(input)
-    @boats.each do |boat|
-      if boat.coordinates[input]
-        hit_boat(input, boat)
-      else
-        @coordinates[input] = ' * '
-        p 'You missed!'
-      end
-    end
+    @boats.each { |boat| return hit_boat(input, boat) if boat.coordinates[input] }
+    @coordinates[input] = ' * '
+    return p('You missed!')
+  end
+
+  def win?
+    value = 0
+    @boats.each { |boat| boat.coordinates.keys.each { |key| value += boat.coordinates[key] } }
+    value == 0
   end
 
   private

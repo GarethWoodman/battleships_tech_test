@@ -9,14 +9,14 @@ class Interface
   end
 
   def start_game
+    p 'Setting up game...'
     setup_boats
     enter_command
   end
 
   def setup_boats
-    p 'Setting up game...'
     p 'Please set 5 boats'
-    1.times do |i|
+    3.times do |i|
       puts "Set boat: #{i+1}"
       boat = Boat.new
       boat.set_length
@@ -39,6 +39,7 @@ class Interface
       elsif input == 3
         p 'Enter coordinate from A0 to I9'
         @board.enter_coordinate(gets.chomp)
+        return p('You win!') if @board.win?
       elsif input == 4
         p 'Exiting...'
         break
@@ -59,7 +60,3 @@ end
 
 interface = Interface.new
 interface.start_game
-
-interface.board.boats.each do |boat|
-  puts boat.coordinates
-end
