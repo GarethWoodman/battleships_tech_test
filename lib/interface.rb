@@ -10,7 +10,7 @@ class Interface
 
   def setup_boats
     puts 'Please set 5 boats'
-    2.times do |i|
+    5.times do |i|
       puts "Set boat: #{i+1}"
       boat = Boat.new
       boat.set_length
@@ -18,11 +18,16 @@ class Interface
       @board.add_boat(boat)
     end
   end
+
+  def show_boats
+    @board.print_board_with_boats
+  end
 end
 
-# interface = Interface.new
-# interface.setup_boats
-#
-# interface.board.boats.each do |boat|
-#   puts boat.coordinates
-# end
+interface = Interface.new
+interface.setup_boats
+puts interface.show_boats
+
+interface.board.boats.each do |boat|
+  puts boat.coordinates
+end

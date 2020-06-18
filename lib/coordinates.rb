@@ -6,8 +6,8 @@ class Coordinates
   end
 
   def self.create_coordinates
-    letters.each do |letter|
-      numbers.each { |number| @coordinates[letter + number.to_s] = ' - ' }
+    numbers.each do |number|
+      letters.each { |letter| @coordinates[letter + number.to_s] = ' - ' }
     end
   end
 
