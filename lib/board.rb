@@ -45,9 +45,8 @@ class Board
   end
 
   def win?
-    value = 0
-    @boats.each { |boat| boat.coordinates.keys.each { |key| value += boat.coordinates[key] } }
-    value == 0
+    @boats.each { |boat| return unless boat.is_sunk?  }
+    true
   end
 
   private

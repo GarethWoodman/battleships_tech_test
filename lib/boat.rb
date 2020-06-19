@@ -30,6 +30,12 @@ class Boat
     end
   end
 
+  def is_sunk?
+    value = 0
+    @coordinates.keys.each { |key| value += @coordinates[key] }
+    value == 0
+  end
+
   private
 
   def check(coordinate)
