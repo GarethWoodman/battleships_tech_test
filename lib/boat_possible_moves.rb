@@ -8,16 +8,6 @@ class BoatPossibleMoves
     possible_moves.include?(coordinate)
   end
 
-  def self.setup
-    @moves = []
-
-    @letters = Coordinates.letters
-    @last_letter_i = @letters.index(@coordinates.keys.last[0])
-
-    @numbers = Coordinates.numbers
-    @last_number_i = @numbers.index(@coordinates.keys.last[1])
-  end
-
   def self.possible_moves
     return Coordinates.create if @coordinates.values.length == 0
 
@@ -29,13 +19,23 @@ class BoatPossibleMoves
     end
 
     if @coordinates.values.length > 1
-      horizontal ? horizontal_moves : vertical_moves
+      horizontal? ? horizontal_moves : vertical_moves
     end
 
     @moves
   end
 
-  def self.horizontal
+  def self.setup
+    @moves = []
+
+    @letters = Coordinates.letters
+    @last_letter_i = @letters.index(@coordinates.keys.last[0])
+
+    @numbers = Coordinates.numbers
+    @last_number_i = @numbers.index(@coordinates.keys.last[1])
+  end
+
+  def self.horizontal?
     @coordinates.keys[0][0] == @coordinates.keys[1][0]
   end
 
@@ -56,4 +56,6 @@ class BoatPossibleMoves
       @moves << @letters[@last_letter_i - 1] + @numbers[@last_number_i]
     end
   end
+
+  private_class_method :possible_moves, :setup, :horizontal?, :horizontal_moves, :vertical_moves
 end
