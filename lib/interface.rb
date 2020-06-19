@@ -18,7 +18,7 @@ class Interface
 
   def setup_boats
     p 'Please set 5 boats'
-    3.times do |i|
+    5.times do |i|
       puts "Set boat: #{i+1}"
       boat = Boat.new
       boat.set_length
