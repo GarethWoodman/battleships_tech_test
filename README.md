@@ -14,59 +14,40 @@ interface = Interface.new
 interface.start_game
 ```
 
-Enter coordinates for 5 boats to setup game
+Enter coordinates for 5 boats to setup game (Only showing the first two as an example, there will still be 5 in total)
 ```
 "Setting up game..."
 "Please set 5 boats"
 Set boat: 1
 Enter length of boat between 2 and 5
-2
+
+> 2
+
 Enter coordinate from A0 to I9
-A0
+
+> A0
+
 Enter coordinate from A0 to I9
-A1
+
+> A1
+
 Set boat: 2
 Enter length of boat between 2 and 5
-3
+
+> 3
+
 Enter coordinate from A0 to I9
-E4
+
+> E4
+
 Enter coordinate from A0 to I9
-F4
+
+> F4
+
 Enter coordinate from A0 to I9
-G4
-Set boat: 3
-Enter length of boat between 2 and 5
-3
-Enter coordinate from A0 to I9
-I9
-Enter coordinate from A0 to I9
-I8
-Enter coordinate from A0 to I9
-I7
-Set boat: 4
-Enter length of boat between 2 and 5
-5
-Enter coordinate from A0 to I9
-C5
-Enter coordinate from A0 to I9
-D5
-Enter coordinate from A0 to I9
-E5
-Enter coordinate from A0 to I9
-F5
-Enter coordinate from A0 to I9
-G5
-Set boat: 5
-Enter length of boat between 2 and 5
-4
-Enter coordinate from A0 to I9
-A5
-Enter coordinate from A0 to I9
-A6
-Enter coordinate from A0 to I9
-A7
-Enter coordinate from A0 to I9
-A8
+
+> G4
+
 ```
 
 Show the board with boats to confirm placement (then hide it from whoever will play)
