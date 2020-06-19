@@ -217,7 +217,7 @@ After many attempts, the final move wins the game
 ```
 * @coordinates
 * @length
-
+```
 
 ### Board
 #### Methods
