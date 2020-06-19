@@ -20,7 +20,7 @@ class BoatPossibleMoves
 
   def self.possible_moves
     return Coordinates.create if @coordinates.values.length == 0
-    
+
     setup
 
     if @coordinates.values.length == 1
@@ -31,8 +31,6 @@ class BoatPossibleMoves
     if @coordinates.values.length > 1
       horizontal ? horizontal_moves : vertical_moves
     end
-
-    p @moves
 
     @moves
   end

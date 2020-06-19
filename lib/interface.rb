@@ -57,6 +57,3 @@ class Interface
     p '4. Exit'
   end
 end
-
-interface = Interface.new
-interface.start_game
