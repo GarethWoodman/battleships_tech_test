@@ -14,6 +14,8 @@ class Interface
     enter_command
   end
 
+  private
+
   def setup_boats
     p 'Please set 5 boats'
     3.times do |i|
@@ -24,8 +26,6 @@ class Interface
       @board.add_boat(boat)
     end
   end
-
-  private
 
   def enter_command
     while true do
