@@ -128,25 +128,35 @@ They managed to sink a ship, successful hits marked with 'X'
 "2. Show board with boats"
 "3. Enter coordinate"
 "4. Exit"
-3
+
+> 3
+
 "Enter coordinate from A0 to I9"
-A0
+
+> A0
+
 "Ah, you hit me!"
 "Enter one of these commands:"
 "1. Show board"
 "2. Show board with boats"
 "3. Enter coordinate"
 "4. Exit"
-3
+
+> 3
+
 "Enter coordinate from A0 to I9"
-A1
+
+> A1
+
 "Ah, you hit me!"
 "Enter one of these commands:"
 "1. Show board"
 "2. Show board with boats"
 "3. Enter coordinate"
 "4. Exit"
-1
+
+> 1
+
   A  B  C  D  E  F  G  H  I  J
 0 x  -  -  -  -  -  *  -  -  - 
 1 x  -  -  -  -  -  -  -  -  - 
